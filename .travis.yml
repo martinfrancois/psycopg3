@@ -104,6 +104,34 @@ matrix:
         - PGVER=12
         - PSYCOPG3_IMPL=ctypes
         - PGPORT=5433
+        
+    - python: 3.8
+      addons:
+        postgresql: '13'
+        apt:
+          packages:
+            - postgresql-13
+            - postgresql-client-13
+      env:
+        - TOXENV=py38
+        - TOXDIR=psycopg3_c
+        - PGVER=13
+        - PSYCOPG3_IMPL=c
+        - PGPORT=5433
+
+    - python: 3.8
+      addons:
+        postgresql: '13'
+        apt:
+          packages:
+            - postgresql-13
+            - postgresql-client-13
+      env:
+        - TOXENV=py38
+        - TOXDIR=psycopg3
+        - PGVER=13
+        - PSYCOPG3_IMPL=ctypes
+        - PGPORT=5433
         - BUILD_DOCS=1
 
 install:
